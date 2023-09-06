@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "c329e060-3c19-4a57-be2f-4386bbf289b4",
+		"name": "BugsMirror",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26519185"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"1\",\r\n    \"secretCode\": \"manik@123\",\r\n    \"name\": \"manik\",\r\n    \"email\": \"manik@123.com\",\r\n    \"playlists\": [\r\n        {\r\n            \"id\": \"Blueeyes\",\r\n            \"name\": \"honey singh\",\r\n            \"songs\": [\r\n                {\r\n                    \"id\": \"blue\",\r\n                    \"name\": \"honey\",\r\n                    \"composers\": \"honey sing\",\r\n                    \"musicURL\": \"https://www.youtube.com/watch?v=NbyHNASFi6U\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"user1\",\r\n    \"secretCode\": \"code1000\",\r\n    \"name\": \"manik\",\r\n    \"email\": \"manik@123.com\",\r\n    \"playlists\": [\r\n        {\r\n            \"id\": \"Blueeyes\",\r\n            \"name\": \"honey singh\",\r\n            \"songs\": [\r\n                {\r\n                    \"id\": \"blue\",\r\n                    \"name\": \"honey\",\r\n                    \"composers\": \"honey sing\",\r\n                    \"musicURL\": \"https://www.youtube.com/watch?v=NbyHNASFi6U\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ViewProfile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"user1\",\r\n    \"secretCode\": \"code1000\",\r\n    \"name\": \"manik\",\r\n    \"email\": \"manik@123.com\",\r\n    \"playlists\": [\r\n        {\r\n            \"id\": \"Blueeyes\",\r\n            \"name\": \"honey singh\",\r\n            \"songs\": [\r\n                {\r\n                    \"id\": \"blue\",\r\n                    \"name\": \"honey\",\r\n                    \"composers\": \"honey sing\",\r\n                    \"musicURL\": \"https://www.youtube.com/watch?v=NbyHNASFi6U\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ViewProfile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ViewProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllSongsOfPlaylist",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"user1\",\r\n    \"secretCode\": \"code1000\",\r\n    \"name\": \"manik\",\r\n    \"email\": \"manik@123.com\",\r\n    \"playlists\": [\r\n        {\r\n            \"id\": \"Blueeyes\",\r\n            \"name\": \"honey singh\",\r\n            \"songs\": null\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/GetAllSongsOfPlaylist?playlistID=Blueeyes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"GetAllSongsOfPlaylist"
+					],
+					"query": [
+						{
+							"key": "playlistID",
+							"value": "Blueeyes"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePlaylist",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"23\",\r\n    \"name\": \"singh\",\r\n    \"songs\": [\r\n        {\r\n            \"id\": \"d\",\r\n            \"name\": \"honey\",\r\n            \"composers\": \"honey sing\",\r\n            \"musicURL\": \"https://www.youtube.com/watch?v=NbyHNASFi6U\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/CreatePlaylist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"CreatePlaylist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddSongToPlaylist",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"PlaylistID\": \"playlist2\",\r\n    \"song\": {\r\n        \"id\": \"ds\",\r\n        \"name\": \"honey\",\r\n        \"composers\": \"test sing\",\r\n        \"musicURL\": \"https://www.youtube.com/watch?v=NbyHNASFi6U\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/AddSongToPlaylist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"AddSongToPlaylist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteSongFromPlaylist",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"PlaylistID\": \"Blueeyes\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/DeletePlaylist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"DeletePlaylist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSongDetail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"PlaylistID\": \"Blueeyes\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/GetSongDetail?songID=ds",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"GetSongDetail"
+					],
+					"query": [
+						{
+							"key": "songID",
+							"value": "ds"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
